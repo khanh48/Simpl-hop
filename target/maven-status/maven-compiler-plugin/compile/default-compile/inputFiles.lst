@@ -1,10 +1,6 @@
-C:\Users\ADMIN\eclipse-workspace\SimpleShop\src\main\java\me\limbo\kit\Kit.java
-C:\Users\ADMIN\eclipse-workspace\SimpleShop\src\main\java\me\limbo\backpack\BackPack.java
-C:\Users\ADMIN\eclipse-workspace\SimpleShop\src\main\java\me\limbo\commands\Commands.java
-C:\Users\ADMIN\eclipse-workspace\SimpleShop\src\main\java\me\limbo\other\Other.java
-C:\Users\ADMIN\eclipse-workspace\SimpleShop\src\main\java\me\limbo\shop\Enchantments.java
-C:\Users\ADMIN\eclipse-workspace\SimpleShop\src\main\java\me\limbo\kit\KitLoad.java
-C:\Users\ADMIN\eclipse-workspace\SimpleShop\src\main\java\me\limbo\hooker\VaultHooker.java
-C:\Users\ADMIN\eclipse-workspace\SimpleShop\src\main\java\me\limbo\Config\CustomConfig.java
-C:\Users\ADMIN\eclipse-workspace\SimpleShop\src\main\java\me\limbo\regEvents\RegEvents.java
-C:\Users\ADMIN\eclipse-workspace\SimpleShop\src\main\java\me\limbo\Main.java
+C:\Users\duykhanh.ng1\eclipse-workspace\SS\src\main\java\im\limbo\Other\Spawn.java
+C:\Users\duykhanh.ng1\eclipse-workspace\SS\src\main\java\im\limbo\Config\ConfigManager.java
+C:\Users\duykhanh.ng1\eclipse-workspace\SS\src\main\java\im\limbo\Main.java
+C:\Users\duykhanh.ng1\eclipse-workspace\SS\src\main\java\im\limbo\Commands\ReloadCommand.java
+C:\Users\duykhanh.ng1\eclipse-workspace\SS\src\main\java\im\limbo\Message\Message.java
+C:\Users\duykhanh.ng1\eclipse-workspace\SS\src\main\java\im\limbo\Commands\RegisterCommands.java

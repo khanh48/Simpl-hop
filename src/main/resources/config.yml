@@ -1,3 +1,10 @@
-maintenance: false
-spawn-on-join: false
-whitelist:
+ticket-price: 10000
+message:
+  reload: "Reloaded!"
+  setspawn: "Đã đặt điểm spawn."
+  spawn: "Đã trở về điểm spawn."
+  no_spawnpoint: "Chưa có điểm spawn nào được đặt.."
+  no_permission: "Bạn cần có quyền để sử dụng lệnh này."
+  console: "Bạn không thể dùng lệnh này trong console."
+data:
+  

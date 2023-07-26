@@ -1,26 +1,33 @@
 name: Other
-main: me.limbo.Main
+main: im.limbo.Main
 authors: [Limbo]
 version: 1.0
 api-version: 1.18
-softdepend: [EasyWhitelist]
 depend: [Vault]
 
 commands:
-  other:
-    description: Open shop
-  sopen:
-      description: Open inventory
   spawn:
-      description: set spawn
+      description: set spawn point
   setspawn:
       description: spawn
+  balance:
+      description: balance of player
+  lreload:
+      description: reload config.
 
 permissions:
-  shop.*:
+  other.*:
     description: For all command
     default: op
     children:
-      shop.spawn: true
-  shop.spawn:
+      other.admin: true
+  other.spawn:
     default: true
+  other.setspawn:
+    default: false
+  other.admin:
+    default: false
+    children:
+      other.spawn: true
+      other.setspawn: true
+      other.reload: true

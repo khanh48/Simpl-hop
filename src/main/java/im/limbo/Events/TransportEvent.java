@@ -13,32 +13,11 @@ import im.limbo.Message.Message;
 import im.limbo.Other.Ticket;
 
 public class TransportEvent implements Listener{
-
-	@EventHandler
-	public void onGoToNether(PlayerPortalEvent event) {
-		Player player = event.getPlayer();
-		if(player.hasPermission("other.admin")) return;
-		if(event.getTo().getWorld().getEnvironment().equals(World.Environment.NETHER) && DefaultConfig.isEnableNetherTicket()) {
-			if(!Ticket.removeTicket(Ticket.NETHER_TICKET, event.getPlayer(), 1)) {
-				Message.sendMessage(player, Message.NO_TICKET);
-				event.setCancelled(true);
-			}else {
-				Message.sendMessage(player, Message.GO_TO, event.getTo().getWorld().getName(), (int)(DefaultConfig.getExpDrop() * 100));
-			}
-		}
-		if(event.getTo().getWorld().getEnvironment().equals(World.Environment.THE_END) && DefaultConfig.isEnableTheEndTicket()) {
-			if(!Ticket.removeTicket(Ticket.THE_END_TICKET, event.getPlayer(), 1)) {
-				Message.sendMessage(player, Message.NO_TICKET);
-				event.setCancelled(true);
-			}else {
-				Message.sendMessage(player, Message.GO_TO, event.getTo().getWorld().getName(), (int)(DefaultConfig.getExpDrop() * 100));
-			}
-		}
-	}
 	
 	@EventHandler
 	public void tele(PlayerTeleportEvent event) {
 		Player player = event.getPlayer();
+		player.sendMessage("tele");
 		if(player.hasPermission("other.admin")) return;
 		if(event.getTo().getWorld().getEnvironment().equals(World.Environment.NETHER) && DefaultConfig.isEnableNetherTicket()) {
 			if(!Ticket.removeTicket(Ticket.NETHER_TICKET, event.getPlayer(), 1)) {

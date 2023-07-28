@@ -12,6 +12,8 @@ commands:
       description: spawn
   balance:
       description: balance of player
+  ticket:
+      description: buy ticket
   lreload:
       description: reload config.
 

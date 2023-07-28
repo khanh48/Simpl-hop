@@ -14,12 +14,12 @@ public class ReloadCommand implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] arg) {
 		if (sender instanceof Player) {
 			if (!sender.hasPermission("other.admin")) {
-				Main.sendMessage(sender, Message.NO_PERMISSION);
+				Message.sendMessage(sender, Message.NO_PERMISSION);
 				return false;
 			}
 		}
 		Main.getIntance().reload();
-		Main.sendMessage(sender, Message.RELOAD);
+		Message.sendMessage(sender, Message.RELOAD);
 		return true;
 	}
 

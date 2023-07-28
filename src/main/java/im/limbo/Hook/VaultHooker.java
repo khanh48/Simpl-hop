@@ -4,6 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.RegisteredServiceProvider;
 
 import im.limbo.Main;
+import im.limbo.Message.Message;
 import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
@@ -17,7 +18,7 @@ public class VaultHooker {
 	public VaultHooker() {
 		this.main = Main.getIntance();
 		if (!setupEconomy()) {
-			Main.sendMessage(main.getServer().getConsoleSender(), "&cCan't hook into Vault!");
+			Message.sendMessage(main.getServer().getConsoleSender(), "&cCan't hook into Vault!");
             Bukkit.getPluginManager().disablePlugin(main);
             return;
         }

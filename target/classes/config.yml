@@ -1,10 +1,16 @@
 ticket-price: 10000
+enable-nether-ticket: true
+enable-the-end-ticket: true
+exp-save: 0.3
+
 message:
   reload: "Reloaded!"
   setspawn: "Đã đặt điểm spawn."
   spawn: "Đã trở về điểm spawn."
-  no_spawnpoint: "Chưa có điểm spawn nào được đặt.."
+  no_spawnpoint: "Chưa có điểm spawn nào được đặt."
   no_permission: "Bạn cần có quyền để sử dụng lệnh này."
+  no_ticket: "Bạn cần có vé để đến được đây."
+  go_to: "Bạn vừa đến %world% khi chết sẽ không mất đồ và %exp% kinh nghiệm."
   console: "Bạn không thể dùng lệnh này trong console."
 data:
   

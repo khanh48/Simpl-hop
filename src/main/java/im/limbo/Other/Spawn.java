@@ -15,16 +15,16 @@ public class Spawn {
 
 	public void spawn(Player player) {
 		if (spawnPoint == null) {
-			Main.sendMessage(player, Message.NO_SPAWNPOINT);
+			Message.sendMessage(player, Message.NO_SPAWNPOINT);
 			return;
 		}
 		player.teleport(spawnPoint);
-		Main.sendMessage(player, Message.SPAWN);
+		Message.sendMessage(player, Message.SPAWN);
 	}
 
 	public void setSpawn(Player player) {
 		setSpawn(player.getLocation());
-		Main.sendMessage(player, Message.SETSPAWN);
+		Message.sendMessage(player, Message.SETSPAWN);
 	}
 
 	public void setSpawn(Location location) {

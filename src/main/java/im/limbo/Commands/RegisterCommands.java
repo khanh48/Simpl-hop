@@ -10,6 +10,7 @@ import im.limbo.Config.DefaultConfig;
 import im.limbo.Message.Message;
 import im.limbo.Other.Spawn;
 import im.limbo.Other.Ticket;
+import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.BaseComponent;
 import net.md_5.bungee.api.chat.ClickEvent;
@@ -40,26 +41,49 @@ public class RegisterCommands {
 				Player player = (Player) sender;
 				if(args.length > 0) {
 					if(args[0].equalsIgnoreCase("buynether")) {
-						Main.vault.getEconomy().withdrawPlayer(player, DefaultConfig.getTicketPrice());
-						Ticket.addTicket(Ticket.NETHER_TICKET, player, 1);
-						Message.sendMessage(sender, "Bạn vừa mua vé nether với giá $" + DefaultConfig.getTicketPrice());
+						double price = DefaultConfig.getNetherTicketPrice();
+						if(Main.getBalance(player) >= price) {
+							Main.vault.getEconomy().withdrawPlayer(player, price);
+							Ticket.addTicket(Ticket.NETHER_TICKET, player, 1);
+							Message.sendMessage(sender, "Bạn vừa mua vé nether với giá $" + price);
+						}
+						else {
+							Message.sendMessage(sender, Message.NO_MONEY);
+						}
 						return true;
 					}
 					else if(args[0].equalsIgnoreCase("buytheend")) {
-						Main.vault.getEconomy().withdrawPlayer(player, DefaultConfig.getTicketPrice());
-						Ticket.addTicket(Ticket.THE_END_TICKET, player, 1);
-						Message.sendMessage(sender, "Bạn vừa mua vé nether với giá $" + DefaultConfig.getTicketPrice());
+						double price = DefaultConfig.getTheEndTicketPrice();
+						if(Main.getBalance(player) >= price) {
+							Main.vault.getEconomy().withdrawPlayer(player, price);
+							Ticket.addTicket(Ticket.THE_END_TICKET, player, 1);
+							Message.sendMessage(sender, "Bạn vừa mua vé the end với giá $" + price);
+						}else {
+							Message.sendMessage(sender, Message.NO_MONEY);
+						}
 						return true;
 					}
 					return false;
 				}else {
 					TextComponent shop = new TextComponent("Shop ticket:\n");
-					TextComponent nether = new TextComponent("Vé Nether (giá $10000): ");
-					TextComponent yNether = new TextComponent("&a>mua<\n");
+					shop.setColor(ChatColor.GOLD);
+					
+					TextComponent nether = new TextComponent(String.format("Vé Nether (giá $%.1f): ", DefaultConfig.getNetherTicketPrice()));
+					nether.setColor(ChatColor.GOLD);
+					
+					TextComponent yNether = new TextComponent(">mua<\n");
+					yNether.setColor(ChatColor.GREEN);
+					yNether.setUnderlined(true);
 					yNether.setClickEvent(new ClickEvent(Action.RUN_COMMAND, "/ticket buynether"));
-					TextComponent theEnd = new TextComponent("Vé The End (giá $15000): ");
-					TextComponent yTheEnd = new TextComponent("&a>mua<\n");
+					
+					TextComponent theEnd = new TextComponent(String.format("Vé The End (giá $%.1f): ", DefaultConfig.getTheEndTicketPrice()));
+					theEnd.setColor(ChatColor.GOLD);
+					
+					TextComponent yTheEnd = new TextComponent(">mua<\n");
+					yTheEnd.setUnderlined(true);
+					yTheEnd.setColor(ChatColor.GREEN);
 					yTheEnd.setClickEvent(new ClickEvent(Action.RUN_COMMAND, "/ticket buytheend"));
+					
 					shop.addExtra(nether);
 					shop.addExtra(yNether);
 					shop.addExtra(theEnd);

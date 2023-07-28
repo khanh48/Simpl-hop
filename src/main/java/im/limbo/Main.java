@@ -9,12 +9,14 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import im.limbo.Commands.RegisterCommands;
+import im.limbo.Events.RegisterEvent;
 import im.limbo.Hook.VaultHooker;
 import im.limbo.Message.Message;
 
 public class Main extends JavaPlugin{
 	private static Main intance;
 	private RegisterCommands commands;
+	private RegisterEvent events;
 	public static VaultHooker vault;
 	
 	public Main() {
@@ -26,6 +28,7 @@ public class Main extends JavaPlugin{
 		saveDefaultConfig();
 		vault = new VaultHooker();
 		commands = new RegisterCommands();
+		events = new RegisterEvent();
 	}
 	
 	public static Main getIntance() {

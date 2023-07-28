@@ -19,11 +19,14 @@ public class DefaultConfig {
 		Main.getIntance().saveConfig();
 	}
 	
-	public static double getTicketPrice() {
-		return Main.getIntance().getConfig().getDouble("ticket-price");
+	public static double getTheEndTicketPrice() {
+		return Main.getIntance().getConfig().getDouble("the-end-ticket-price");
 	}
-	
-	public static double getExpSave() {
-		return Main.getIntance().getConfig().getDouble("exp-save");
+
+	public static double getNetherTicketPrice() {
+		return Main.getIntance().getConfig().getDouble("nether-ticket-price");
+	}
+	public static double getExpDrop() {
+		return Main.getIntance().getConfig().getDouble("exp-drop");
 	}
 }

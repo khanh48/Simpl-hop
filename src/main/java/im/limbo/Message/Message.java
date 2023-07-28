@@ -14,6 +14,7 @@ public class Message {
 	public static String NO_SPAWNPOINT = message("no_spawnpoint");
 	public static String NO_PERMISSION = message("no_permission");
 	public static String NO_TICKET = message("no_ticket");
+	public static String NO_MONEY = message("no_money");
 	public static String GO_TO = message("go_to");
 	public static String RELOAD = message("reload");
 	public static String CONSOLE = message("console");
@@ -36,6 +37,7 @@ public class Message {
 		NO_SPAWNPOINT = message("no_spawnpoint");
 		NO_PERMISSION = message("no_permission");
 		NO_TICKET = message("no_ticket");
+		NO_MONEY = message("no_money");
 		GO_TO = message("go_to");
 		RELOAD = message("reload");
 		CONSOLE = message("console");
@@ -71,6 +73,6 @@ public class Message {
 	public static void sendMessage(CommandSender sender, String message, String world, int exp) {
 		String tmp = "";
 		tmp = Message.replace(Message.replace(message, "%world%", world), "%exp%", String.valueOf(exp));
-		sender.sendMessage(format(tmp));
+		sender.sendMessage(nonFormat(tmp));
 	}
 }

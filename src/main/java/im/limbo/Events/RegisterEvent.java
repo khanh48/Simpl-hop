@@ -12,5 +12,6 @@ public class RegisterEvent {
 		PluginManager manager = main.getServer().getPluginManager();
 
 		manager.registerEvents(new TransportEvent(), main);
+		manager.registerEvents(new Etc(), main);
 	}
 }

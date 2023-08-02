@@ -17,8 +17,8 @@ public class TransportEvent implements Listener{
 	@EventHandler
 	public void tele(PlayerTeleportEvent event) {
 		Player player = event.getPlayer();
-		player.sendMessage("tele");
 		if(player.hasPermission("other.admin")) return;
+		if(event.getFrom().getWorld().getEnvironment().equals(event.getTo().getWorld().getEnvironment())) return;
 		if(event.getTo().getWorld().getEnvironment().equals(World.Environment.NETHER) && DefaultConfig.isEnableNetherTicket()) {
 			if(!Ticket.removeTicket(Ticket.NETHER_TICKET, event.getPlayer(), 1)) {
 				Message.sendMessage(player, Message.NO_TICKET);

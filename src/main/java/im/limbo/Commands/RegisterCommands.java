@@ -82,12 +82,17 @@ public class RegisterCommands {
 					TextComponent yTheEnd = new TextComponent(">mua<\n");
 					yTheEnd.setUnderlined(true);
 					yTheEnd.setColor(ChatColor.GREEN);
+					
+					TextComponent description = new TextComponent("Khi chết bạn sẽ không bị mất đồ nhưng sẽ mất " + (int)(DefaultConfig.getExpDrop() * 100) + "% kinh nghiệm");
+					description.setItalic(true);
+					description.setColor(ChatColor.GRAY);
 					yTheEnd.setClickEvent(new ClickEvent(Action.RUN_COMMAND, "/ticket buytheend"));
 					
 					shop.addExtra(nether);
 					shop.addExtra(yNether);
 					shop.addExtra(theEnd);
 					shop.addExtra(yTheEnd);
+					shop.addExtra(description);
 					player.spigot().sendMessage(shop);
 				}
 				return true;

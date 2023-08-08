@@ -4,6 +4,7 @@ im\limbo\Commands\RegisterCommands$SpawnCommand.class
 im\limbo\Config\DefaultConfig.class
 im\limbo\Message\Message.class
 im\limbo\Commands\RegisterCommands$1.class
+im\limbo\Events\Etc$1.class
 im\limbo\Events\TransportEvent.class
 im\limbo\Main.class
 im\limbo\Commands\RegisterCommands$SetSpawnCommand.class
@@ -12,5 +13,6 @@ im\limbo\Config\ConfigManager.class
 im\limbo\Events\RegisterEvent.class
 im\limbo\Other\Spawn.class
 im\limbo\Commands\ReloadCommand.class
+im\limbo\Events\Etc.class
 im\limbo\Commands\RegisterCommands$BalanceCommand.class
 im\limbo\Commands\RegisterCommands.class

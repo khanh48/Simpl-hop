@@ -7,6 +7,7 @@ import org.bukkit.Color;
 import org.bukkit.FireworkEffect;
 import org.bukkit.FireworkEffect.Type;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.World.Environment;
 import org.bukkit.entity.EntityType;
@@ -16,6 +17,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.EntitySpawnEvent;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.FireworkMeta;
 import org.bukkit.scheduler.BukkitRunnable;
 
@@ -38,6 +40,9 @@ public class Etc implements Listener{
 	
 	@EventHandler
 	public void onKill(EntityDeathEvent e) {
+		if(e.getEntityType().equals(EntityType.IRON_GOLEM)) {
+			e.getDrops().clear();
+		}
 		if(e.getEntityType().equals(EntityType.ENDER_DRAGON)) {
 
 			for (Player p : Bukkit.getServer().getOnlinePlayers()) {
